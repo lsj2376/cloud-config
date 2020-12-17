@@ -1,6 +1,9 @@
 server:
   port: 10001
 spring:
+  rabbitmq:
+    host: 192.168.128.6
+    port: 5672
   application:
     name: member-fegin #服务名称
 eureka:
