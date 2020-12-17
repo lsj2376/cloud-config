@@ -1,0 +1,30 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: member-fegin #服务名称
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka  #不加eureka 无法找到
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+hystrix:
+  command:
+    default:  #default全局有效，service id指定应用有效
+      execution:
+        timeout:
+          #如果enabled设置为false，则请求超时交给ribbon控制,为true,则超时作为熔断根据
+          enabled: true
+        isolation:
+          thread:
+            maxConcurrentRequests: 20   #当前信号隔离量隔离时  默认最大是20
+member:
+  userName: abc
