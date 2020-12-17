@@ -27,4 +27,4 @@ hystrix:
           thread:
             maxConcurrentRequests: 20   #当前信号隔离量隔离时  默认最大是20
 member:
-  userName: abc
+  userName: xyz
